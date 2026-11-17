@@ -1,0 +1,104 @@
+<footer class="footer">
+  <div class="wrap footer-top">
+    <div>
+      <a class="footer-brand" href="/">
+        000<span>.</span>website
+      </a>
+      <p class="footer-note">
+        A small initiative from
+        <a
+          href="https://www.axeldevelops.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="accent"
+        >
+          AXEL DEVELOPS
+        </a>
+        <br />
+        for a more accessible, independent web.
+      </p>
+    </div>
+    <div class="footer-links">
+      <a href="/approach">How it works</a>
+      <a href="/about">Who's behind</a>
+      <a href="/projects">Made with 000</a>
+      <a href="/get-involved">Let's start</a>
+      <a href="mailto:hello@000.website">SAY HELLO</a>
+    </div>
+    <!-- <a class="footer-contact" href="mailto:hello@000.website">
+      SAY HELLO
+    </a> -->
+  </div>
+  <div class="wrap footer-bottom mono">
+    <span>© {new Date().getFullYear()} 000.WEBSITE</span>
+    <span>AXEL DEVELOPS</span>
+  </div>
+</footer>
+<style>
+  .footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 70px 0 22px;
+    margin-top: 100px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0fr;
+    gap: 30px;
+    padding-bottom: 75px;
+  }
+  .footer-brand {
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.1em;
+    font-weight: 700;
+  }
+  .footer-brand span {
+    color: var(--orange);
+  }
+  .footer-note {
+    color: #b7b4aa;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .footer-links {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-size: 14px;
+  }
+  .footer-links a:hover,
+  .footer-contact:hover {
+    color: var(--orange);
+  }
+  .footer-contact {
+    font:
+      11px "DM Mono",
+      monospace;
+    justify-self: end;
+  }
+  .footer-bottom {
+    border-top: 1px solid #4b4a44;
+    padding-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    color: #aaa79e;
+    font-size: 9px;
+  }
+  @media (max-width: 650px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer-top > div:first-child {
+      grid-column: 1/-1;
+    }
+    .footer-contact {
+      justify-self: start;
+    }
+    .footer-bottom {
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  }
+</style>

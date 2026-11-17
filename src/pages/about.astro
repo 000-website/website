@@ -1,0 +1,186 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="About — 000">
+  <Header />
+
+  <main class="wrap page">
+    <section class="about">
+      <h1 class="display">
+        FROM ONE.
+        <br />
+        <span class="accent">TO EVERYONE.</span>
+      </h1>
+
+      <div class="about-content">
+        <div class="about-label">
+          <p class="eyebrow">A LITTLE INTRODUCTION</p>
+        </div>
+
+        <div class="about-text">
+          <p class="intro">Hi, I'm Axel.</p>
+
+          <p>
+            I'm a developer who believes the web should be more open,
+            accessible, and welcoming.
+          </p>
+          <p>
+            I started <b>000.website</b> because having a website of your own
+            shouldn't require spending money, technical knowledge, or dependence
+            on someone else.
+          </p>
+
+          <p>
+            For now, It's just me building one project at a time, learning from
+            the people I work with and figuring out how to escalate the idea to
+            a sustainable automated pipeline that does not depend on me.
+          </p>
+
+          <p>
+            The goal is simple: make the process of having a website open and
+            approachable, today with one handmade website at a time, tomorrow
+            with tools that everyone can use.
+          </p>
+
+          <a class="contact-link" href="mailto:hello@000.website">
+            SAY HELLO
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .display {
+    /* margin-top: 56px; */
+    font-size: clamp(48px, 9vw, 112px);
+    line-height: 0.94;
+    letter-spacing: -0.075em;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+  }
+
+  .accent {
+    color: var(--accent);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    margin-top: 110px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+
+  .about-label {
+    padding-top: 8px;
+  }
+
+  .about-text {
+    max-width: 640px;
+  }
+
+  .about-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    /* color: var(--muted); */
+    margin-bottom: 24px;
+  }
+
+  .about-text .intro {
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.3;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--text);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+
+  .contact-link:hover {
+    gap: 34px;
+  }
+
+  .note {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 120px;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .note-mark {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -0.09em;
+  }
+
+  .note p {
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    text-align: right;
+    color: var(--muted);
+  }
+
+  @media (max-width: 700px) {
+    .page {
+      padding-top: 56px;
+      padding-bottom: 80px;
+    }
+
+    .display {
+      margin-top: 40px;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 72px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+    }
+
+    .note {
+      margin-top: 80px;
+    }
+  }
+</style>

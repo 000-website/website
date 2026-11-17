@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const contactEmail = "hello@000.website"; // Replace with the real inbox before publishing.
+---
+
+<BaseLayout title="Get involved — 000.website">
+  <Header />
+  <main class="wrap page">
+    <h1 class="display">
+      YOUR PLACE
+      <br />
+      ONLINE
+      <br />
+      <span class="accent">STARTS HERE.</span>
+    </h1>
+    <div class="contact-grid">
+      <p></p>
+      <div>
+        <p>
+          This is a call to small businesses, independent communities and
+          non-profit associations.
+        </p>
+        <p>
+          If you have a meaningful project that could use a home on the web,
+          we'd like to hear about it. <br />
+          Tell us what you do, who you want to reach, and what you imagine your
+          website could be.
+        </p>
+        <a
+          class="button"
+          href={`mailto:${contactEmail}?subject=${encodeURIComponent("A project for 000.website")}`}
+        >
+          Start a conversation
+        </a>
+      </div>
+    </div>
+    <div class="note">
+      <span class="mono">A QUICK NOTE</span>
+      <p>
+        We work on a limited number of projects and prioritize small
+        organizations that would otherwise struggle to afford a website. <br />
+        <br />
+        *Free means no development and maintanace fee; <br /> if there is any
+        optional third-party costs, such as a custom domain, will be discussed
+        clearly in advance.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .page {
+  }
+  .page h1 {
+    margin: 90px 0 110px;
+    font-size: clamp(4rem, 12vw, 11rem);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    max-width: 950px;
+    margin-left: auto;
+  }
+  .lead {
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.07em;
+    margin: 0 0 28px;
+  }
+  .contact-grid p:not(.eyebrow) {
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .note {
+    margin: 100px 0 0;
+    padding: 30px;
+    background: #dedbd2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+  }
+  .note p {
+    max-width: 650px;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+  }
+  @media (max-width: 700px) {
+    .page {
+      padding-top: 45px;
+    }
+    .page h1 {
+      margin: 70px 0;
+      font-size: clamp(3.7rem, 15vw, 7rem);
+    }
+    .contact-grid,
+    .note {
+      grid-template-columns: 1fr;
+    }
+    .note {
+      margin-top: 70px;
+      padding: 22px;
+    }
+  }
+</style>

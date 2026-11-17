@@ -1,0 +1,113 @@
+---
+const links = [
+  { href: "/approach", label: "How it works" },
+  { href: "/about", label: "Who's behind" },
+  { href: "/projects", label: "Made with 000" },
+  {
+    href: "/get-involved",
+    label: "Let's start",
+    // "Get involved"
+  },
+];
+---
+
+<header class="header wrap">
+  <a class="brand" href="/" aria-label="000.website home">
+    000<span>.</span>website
+  </a>
+  <button
+    class="menu-toggle mono"
+    aria-expanded="false"
+    aria-controls="site-nav"
+  >
+    MENU <span>＋</span>
+  </button>
+  <nav id="site-nav" class="nav">
+    {links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const nav = document.querySelector<HTMLElement>("#site-nav");
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    nav?.classList.toggle("open", !open);
+    toggle.innerHTML = open ? "MENU <span>＋</span>" : "CLOSE <span>×</span>";
+  });
+</script>
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    gap: 24px;
+    padding: 2rem;
+    /* background: rgba(255, 255, 255, 0.10); */
+    background: #f2efe7;
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
+  }
+  .brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.1em;
+  }
+  .brand span {
+    color: var(--orange);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 42px);
+    font-size: 16px;
+  }
+  .nav a:hover {
+    color: var(--orange);
+  }
+  .nav-cta {
+    font-family: "DM Mono", monospace;
+    text-transform: uppercase;
+    font-size: 10px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 5px;
+  }
+  .nav-cta span {
+    color: var(--orange);
+    margin-left: 12px;
+  }
+  .menu-toggle {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 11px;
+  }
+  @media (max-width: 760px) {
+    .header {
+      min-height: 72px;
+      flex-wrap: wrap;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    .nav {
+      display: none;
+      width: 100%;
+      padding: 8px 0 22px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .nav.open {
+      display: flex;
+    }
+  }
+</style>

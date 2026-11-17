@@ -1,0 +1,360 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <main>
+    <section class="hero wrap">
+      <h1 class="display">
+        LET'S PUT
+        <br />
+        YOU <span class="accent">ONLINE</span> <br />
+        <span style={{ fontSize: "5rem" }}>*For free</span>
+      </h1>
+
+      <div class="hero-bottom">
+        <p>
+          We make <strong>100% free websites</strong> for small businesses,
+          communities, and non-profits. No fees. No subscriptions. Yours to own.
+        </p>
+      </div>
+    </section>
+    <section class="manifesto">
+      <div class="wrap manifesto-grid">
+        <p></p>
+        <div>
+          <h2 class="section-title">
+            GOOD THINGS
+            <br />
+            DESERVE TO
+            <br />
+            BE SEEN.
+          </h2>
+          <p class="manifesto-copy">
+            A website can help a neighborhood shop get found, a community share
+            its work, or a non-profit reach the people who need it. We believe
+            that shouldn't depend on a budget.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="promise wrap">
+      <p class="section-title">Why 000?</p>
+      <div class="promise-grid">
+        <article>
+          <b>01</b>
+          <h3>
+            0
+            <br />
+            TO START.
+          </h3>
+          <p>No initial development fee.</p>
+        </article>
+        <article>
+          <b>02</b>
+          <h3>
+            0
+            <br />
+            MONTHLY.
+          </h3>
+          <p>No maintenance plans or subscriptions.</p>
+        </article>
+        <article>
+          <b>03</b>
+          <h3>
+            0
+            <br />
+            LOCK-IN.
+          </h3>
+          <p>Your content, your files, your domain all in your own accounts.</p>
+        </article>
+      </div>
+    </section>
+    <section class="feature">
+      <p class="section-title">Our work</p>
+      <div class="wrap feature-grid">
+        <div>
+          <p class="feature-number">001</p>
+        </div>
+        <div>
+          <h2 class="section-title">
+            SEOUL
+            <br />
+            INDIES<span class="accent">.</span>
+          </h2>
+          <p class="feature-copy">
+            Our first showcase project: a home for an independent games
+            community in Seoul that organizes monthly gatherings bringing
+            together...
+          </p>
+          <a class="button light" href="/projects/seoul-indies">
+            Explore project
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="closing wrap">
+      <p></p>
+      <h2 class="display">
+        Claim your corner of the
+        <br />
+        <span class="accent">internet.</span>
+      </h2>
+      <div class="closing-bottom">
+        <p>
+          Have a small business, community, or a cause that deserves a place on
+          the web?
+        </p>
+        <a class="button" href="/get-involved">
+          Let's make it happen!
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .hero {
+    min-height: 66vh;
+    /* padding-top:28px;  */
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-meta,
+  .promise-head {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+  }
+  .hero h1 {
+    margin-top: 100px;
+    /* margin-top:40px;  */
+    position: relative;
+    z-index: 1;
+  }
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin: 48px 0 50px;
+  }
+  .hero-bottom p {
+    max-width: 420px;
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .hero-stamp {
+    position: absolute;
+    right: 8%;
+    top: 230px;
+    width: 132px;
+    height: 132px;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(12deg);
+    font:
+      9px "DM Mono",
+      monospace;
+  }
+  .hero-stamp b {
+    font:
+      700 46px "Space Grotesk",
+      sans-serif;
+    letter-spacing: -0.1em;
+  }
+  .manifesto {
+    background: var(--orange);
+    padding: 100px 0;
+  }
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+  }
+  .manifesto .eyebrow {
+    color: rgba(23, 23, 20, 0.65);
+  }
+  .manifesto-copy {
+    max-width: 470px;
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 40px 0 24px auto;
+    font-weight: 400;
+    color: whitesmoke;
+  }
+  .text-link {
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 7px;
+    font:
+      11px "DM Mono",
+      monospace;
+  }
+  .text-link span {
+    margin-left: 20px;
+  }
+  .promise {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 55px;
+    border-top: 1px solid var(--line);
+  }
+  .promise-grid article {
+    padding: 22px 25px 0 0;
+    border-right: 1px solid var(--line);
+    min-height: 280px;
+  }
+  .promise-grid article + article {
+    padding-left: 25px;
+  }
+  .promise-grid article:last-child {
+    border: 0;
+  }
+  .promise-grid b {
+    font:
+      11px "DM Mono",
+      monospace;
+    color: var(--orange);
+  }
+  .promise-grid h3 {
+    font-size: clamp(2.3rem, 5vw, 5rem);
+    line-height: 0.88;
+    letter-spacing: -0.08em;
+    margin: 40px 0 20px;
+  }
+  .promise-grid p {
+    max-width: 260px;
+    color: var(--muted);
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  .feature {
+    background: #dedbd2;
+    padding: 100px 0;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+  }
+  .feature-number {
+    font-size: clamp(6rem, 18vw, 15rem);
+    line-height: 0.8;
+    letter-spacing: -0.12em;
+    margin: 45px 0 0;
+    font-weight: 700;
+    color: var(--orange);
+  }
+  .feature-grid .section-title {
+    margin: 45px 0 25px;
+  }
+  .feature-copy {
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+  .closing {
+    padding-top: 110px;
+    padding-bottom: 20px;
+  }
+  .closing h2 {
+    margin: 70px 0 45px;
+  }
+  .closing-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+  }
+  .closing-bottom p {
+    max-width: 390px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  @media (max-width: 700px) {
+    .hero {
+      min-height: 0;
+      padding-top: 22px;
+      padding-bottom: 50px;
+    }
+    .hero h1 {
+      margin-top: 90px;
+      font-size: clamp(4rem, 17vw, 7rem);
+    }
+    .hero-stamp {
+      width: 85px;
+      height: 85px;
+      top: 150px;
+      right: 4%;
+    }
+    .hero-stamp b {
+      font-size: 30px;
+    }
+    .hero-bottom,
+    .closing-bottom {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .manifesto,
+    .feature {
+      padding: 70px 0;
+    }
+    .manifesto-grid,
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+    .manifesto-copy {
+      margin: 30px 0 22px;
+    }
+    .text-link {
+      margin-left: 0;
+    }
+    .promise {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .promise-grid {
+      grid-template-columns: 1fr;
+    }
+    .promise-grid article,
+    .promise-grid article + article {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+      min-height: 0;
+    }
+    .promise-grid h3 {
+      margin: 22px 0 10px;
+    }
+    .feature-number {
+      margin: 20px 0 50px;
+    }
+    .feature-grid .section-title {
+      margin: 25px 0;
+    }
+    .closing {
+      padding-top: 75px;
+    }
+    .closing h2 {
+      margin: 55px 0 35px;
+      font-size: clamp(4rem, 16vw, 7rem);
+    }
+  }
+</style>

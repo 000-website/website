@@ -1,0 +1,425 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import astroLogo from "../assets/astro.svg";
+import githubLogo from "../assets/github.svg";
+import cloudflareLogo from "../assets/cloudflare.svg";
+import decapLogo from "../assets/decap.svg";
+
+const steps = [
+  [
+    "01",
+    "LEARN",
+    "We learn what your business or group does, who it serves, and what the website needs to do.",
+  ],
+  [
+    "02",
+    "MAKE",
+    "We shape the structure and design, then build a fast, responsive website.",
+  ],
+  [
+    "03",
+    "REVIEW",
+    "Explore a live preview, review the content, and inspect the code. Everything is open and accessible before you decide to make it yours.",
+  ],
+  [
+    "04",
+    "IT'S YOURS",
+    "Set up your accounts, bring the project and launch your website. Follow our guides to publish and manage it independently.",
+  ],
+];
+
+const technologies = [
+  {
+    name: "ASTRO",
+    logo: astroLogo,
+    url: "https://astro.build/",
+    description:
+      "The foundation of your website. Fast, lightweight and built with modern web technology.",
+  },
+  {
+    name: "GITHUB",
+    logo: githubLogo,
+    url: "https://github.com/",
+    description:
+      "Keeps your website's files and history safe. Every change is tracked, and your files remain always accessible.",
+  },
+  {
+    name: "CLOUDFLARE",
+    logo: cloudflareLogo,
+    url: "https://www.cloudflare.com/",
+    description:
+      "Delivers your website quickly and securely to visitors around the world.",
+  },
+  {
+    name: "DECAP CMS",
+    logo: decapLogo,
+    url: "https://decapcms.org/",
+    description:
+      "Your editing dashboard. Update text, upload images and publish without writing code.",
+  },
+];
+---
+
+<BaseLayout title="How it works — 000.website">
+  <Header />
+
+  <main class="wrap page">
+    <h1 class="display">
+      NOTHING
+      <br />
+      <span class="accent">COMPLICATED.</span>
+    </h1>
+
+    <div class="lead-row">
+      <p>HOW WE WORK</p>
+      <p class="lead-mini">
+        <b>000.website</b> is currently working with a small number of people
+        and organizations in Seoul and across South Korea.
+        <br />
+        <br />
+        For now each project is a hands-on collaboration. This helps us
+        understand what's actually needed, develop practical examples, and
+        improve the way we work.
+        <br />
+        <br />
+        Behind the scenes, we're building the templates, tools, and
+        documentation to make the process simpler, more automated, and
+        accessible to everyone.
+      </p>
+    </div>
+
+    <div class="steps">
+      {steps.map(([number, title, description]) => (
+        <article class="step">
+          <span class="num">{number}</span>
+
+          <div class="step-content">
+            <h2>
+              {title}
+              <span>.</span>
+            </h2>
+            <p>{description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <section class="tech">
+      <div class="tech-intro">
+        <h2 class="section-title">
+          LESS TO
+          <br />
+          BREAK.
+          <br />
+          MORE TO
+          <br />
+          LOVE.
+        </h2>
+        <div>
+          <h3 class="tech-content">THE TECHNOLOGY</h3>
+          <p class="tech-lead">
+            We use simple and reliable tools. Fewer moving parts mean faster
+            pages, more flexibility, and easier maintenance.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-grid">
+        {technologies.map((tech) => (
+          <a
+            class="tech-card"
+            href={tech.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="tech-logo">
+              <img src={tech.logo.src} alt={`${tech.name} logo`} />
+            </div>
+
+            <div class="tech-content">
+              <h3>{tech.name}</h3>
+
+              <p>{tech.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page {
+    padding: 0;
+  }
+
+  .page h1 {
+    margin: 90px 0 100px;
+    font-size: clamp(4rem, 12vw, 11rem);
+  }
+
+  /* INTRO */
+
+  .lead-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    max-width: 950px;
+    margin: 0 0 70px auto;
+  }
+
+  .lead {
+    font-size: clamp(1.8rem, 4vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    margin: 0;
+  }
+  .lead-mini {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    margin: 0;
+  }
+
+  /* PROCESS */
+
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 2fr 40px;
+    gap: 30px;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+
+  .num {
+    font:
+      12px "DM Mono",
+      monospace;
+    color: var(--orange);
+  }
+
+  .step h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    letter-spacing: -0.08em;
+    line-height: 0.9;
+    margin: 0 0 15px;
+  }
+
+  .step h2 span {
+    color: var(--orange);
+  }
+
+  .step p {
+    max-width: 450px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* TECHNOLOGY */
+
+  .tech {
+    margin: 120px 0 0;
+    padding: 65px 30px;
+    background: var(--orange);
+    min-width: 0;
+  }
+
+  .tech > .eyebrow {
+    margin: 0 0 65px;
+  }
+
+  .tech-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: end;
+    margin-bottom: 90px;
+  }
+
+  .tech-intro h2 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.85;
+    letter-spacing: -0.08em;
+    margin: 0;
+  }
+
+  .tech-intro h2 span {
+    color: white;
+  }
+
+  .tech-lead {
+    max-width: 420px;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* TECHNOLOGY CARDS */
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    min-width: 0;
+  }
+
+  .tech-card {
+    min-width: 0;
+    min-height: 190px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    color: var(--ink);
+    text-decoration: none;
+    transition: background 0.2s ease;
+    overflow: hidden;
+  }
+
+  .tech-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  /* FIXED LOGO CONTAINER */
+
+  .tech-logo {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .tech-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* CARD CONTENT */
+
+  .tech-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tech-content h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .tech-content h3 span {
+    color: white;
+    font-size: 0.9rem;
+    margin-left: 8px;
+  }
+
+  .tech-content p {
+    max-width: 350px;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .tech-note {
+    margin: 45px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    font:
+      10px "DM Mono",
+      monospace;
+    letter-spacing: 0.04em;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 700px) {
+    .page {
+      padding-top: 45px;
+    }
+
+    .page h1 {
+      margin: 70px 0;
+      font-size: clamp(3.7rem, 15vw, 7rem);
+    }
+
+    .lead-row,
+    .step {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .step {
+      position: relative;
+      padding-right: 30px;
+    }
+
+    .tech {
+      padding: 45px 20px;
+      margin-top: 70px;
+    }
+
+    .tech > .eyebrow {
+      margin-bottom: 45px;
+    }
+
+    .tech-intro {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-bottom: 55px;
+    }
+
+    .tech-intro h2 {
+      font-size: clamp(3.5rem, 14vw, 6rem);
+    }
+
+    .tech-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tech-card {
+      min-height: 150px;
+      max-width: 500;
+      padding: 24px 15px;
+      gap: 20px;
+    }
+
+    .tech-logo {
+      width: 42px;
+      height: 42px;
+      flex-basis: 42px;
+    }
+
+    .tech-content h3 {
+      font-size: 1.3rem;
+    }
+
+    .tech-content p {
+      font-size: 0.9rem;
+    }
+
+    .tech-note {
+      line-height: 1.6;
+    }
+  }
+</style>

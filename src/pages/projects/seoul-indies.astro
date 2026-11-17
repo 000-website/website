@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+// Confirm the official project URL before publishing
+const projectUrl = "";
+---
+
+<BaseLayout title="001 — Seoul Indies — 000.website">
+  <Header />
+  <main class="wrap page">
+    <p class="eyebrow">001 / FIRST PROJECT / COMMUNITY</p>
+    <h1 class="display">
+      SEOUL
+      <br />
+      INDIES<span class="accent">.</span>
+    </h1>
+    <div class="project-intro">
+      <p class="eyebrow">SEOUL, SOUTH KOREA</p>
+      <div>
+        <p class="lead">A home for independent videogames in Seoul.</p>
+        <p>
+          Seoul Indies is the first showcase project from <b>000.website</b>. It
+          represents the kind of independent community we want to help: people
+          making games, bringing others together, and building something outside
+          the mainstream.
+        </p>
+        {projectUrl && (
+          <a class="button" href={projectUrl} target="_blank" rel="noreferrer">
+            Visit Seoul Indies.
+          </a>
+        )}
+      </div>
+    </div>
+    <div class="statement">
+      <span class="mono">WHY THIS PROJECT</span>
+      <p>Independent games deserves an independent place on the web.</p>
+    </div>
+    <a class="back mono" href="/projects">
+      ← BACK TO ALL PROJECTS
+    </a>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .page {
+    padding: 70px 0 0;
+  }
+  .page h1 {
+    margin: 100px 0 110px;
+    font-size: clamp(5rem, 16vw, 14rem);
+  }
+  .project-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    max-width: 950px;
+    margin-left: auto;
+  }
+  .project-intro .lead {
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.07em;
+    margin: 0 0 30px;
+  }
+  .project-intro p:not(.eyebrow) {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .statement {
+    margin: 110px 0 55px;
+    padding: 40px;
+    background: var(--orange);
+  }
+  .statement p {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+    max-width: 850px;
+    margin: 55px 0 10px;
+  }
+  .back {
+    font-size: 10px;
+    border-bottom: 1px solid;
+    padding-bottom: 6px;
+  }
+  @media (max-width: 700px) {
+    .page {
+      padding-top: 45px;
+    }
+    .page h1 {
+      margin: 70px 0;
+    }
+    .project-intro {
+      grid-template-columns: 1fr;
+    }
+    .statement {
+      margin: 70px 0 45px;
+      padding: 25px;
+    }
+  }
+</style>

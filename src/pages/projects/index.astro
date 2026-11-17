@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<BaseLayout title="Projects — 000.website">
+  <Header />
+  <main class="wrap page">
+    <h1 class="display">
+      ONE BY
+      <br />
+      ONE<span class="accent">.</span>
+    </h1>
+    <p class="intro">
+      Every project starts with a reason to be online. Here's the beginning of
+      the collection.
+    </p>
+    <a class="project" href="/projects/seoul-indies">
+      <div class="project-top">
+        <span class="mono">001 / COMMUNITY</span>
+        <span class="mono">SEOUL, KR ↗</span>
+      </div>
+      <h2>
+        SEOUL
+        <br />
+        INDIES<span class="accent">.</span>
+      </h2>
+      <div class="project-bottom">
+        <p>
+          a home for an independent games community in Seoul that organizes
+          monthly gatherings bringing together...
+        </p>
+      </div>
+    </a>
+    <div class="next">
+      <span class="mono">002 / NEXT UP</span>
+      <p>
+        YOUR PROJECT
+        <br />
+        COULD BE HERE<span class="accent">.</span>
+      </p>
+      <a href="/get-involved">TELL US ABOUT IT</a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .page {
+    /* padding: 70px 0 0; */
+  }
+  .page h1 {
+    margin: 90px 0 30px;
+    font-size: clamp(5rem, 15vw, 13rem);
+  }
+  .intro {
+    max-width: 450px;
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0 0 70px auto;
+  }
+  .project {
+    display: block;
+    background: var(--orange);
+    padding: 30px;
+  }
+  .project-top,
+  .project-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .project h2 {
+    font-size: clamp(5rem, 15vw, 13rem);
+    line-height: 0.78;
+    letter-spacing: -0.11em;
+    margin: 100px 0 80px;
+  }
+  .project h2 .accent {
+    color: var(--paper);
+  }
+  .project-bottom p {
+    max-width: 350px;
+    font-size: 15px;
+    margin: 0;
+  }
+  .project-bottom .mono {
+    font-size: 10px;
+    align-self: end;
+  }
+  .next {
+    padding: 70px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .next p {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+    font-weight: 700;
+    margin: 30px 0;
+  }
+  .next a {
+    font:
+      11px "DM Mono",
+      monospace;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+  }
+  @media (max-width: 700px) {
+    .page {
+      padding-top: 45px;
+    }
+    .page h1 {
+      margin: 70px 0 25px;
+    }
+    .project {
+      padding: 20px;
+    }
+    .project h2 {
+      margin: 75px 0;
+    }
+    .project-top,
+    .project-bottom {
+      flex-direction: column;
+    }
+    .project-bottom .mono {
+      align-self: flex-start;
+    }
+  }
+</style>
