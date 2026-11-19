@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+
+  --paper: #f2efe7;
+  --ink: #171714;
+  --orange: #f04b2f;
+  --line: rgba(23, 23, 20, 0.22);
+  --muted: #6c6a62;
+
+  --sl-font: "Space Grotesk", Arial, sans-serif;
+  --sl-font-system: "Space Grotesk", Arial, sans-serif;
+  --sl-font-mono: "DM Mono", monospace;
+
+  --sl-color-white: var(--ink);
+  --sl-color-gray-1: #33332e;
+  --sl-color-gray-2: #55534c;
+  --sl-color-gray-3: var(--muted);
+  --sl-color-gray-4: #aaa69b;
+  --sl-color-gray-5: #d4d0c6;
+  --sl-color-gray-6: #e6e2d8;
+  --sl-color-gray-7: var(--paper);
+
+  --sl-color-bg: var(--paper);
+  --sl-color-bg-nav: var(--paper);
+  --sl-color-bg-sidebar: var(--paper);
+
+  --sl-color-text: var(--ink);
+  --sl-color-text-accent: var(--orange);
+
+  --sl-color-accent-low: #f8d6cd;
+  --sl-color-accent: var(--orange);
+  --sl-color-accent-high: #9e2918;
+
+  --sl-color-hairline: var(--line);
+  --sl-color-hairline-light: var(--line);
+
+  --sl-content-width: 48rem;
+  --sl-sidebar-width: 17rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Space Grotesk", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--paper);
+}
+
+/* Header */
+
+header.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.site-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background: var(--paper);
+  border-inline-end: 1px solid var(--line);
+}
+
+.sidebar-content {
+  font-size: 0.9rem;
+}
+
+.sidebar-content a {
+  border-radius: 0;
+}
+
+.sidebar-content a[aria-current="page"] {
+  background: transparent;
+  color: var(--orange);
+  font-weight: 600;
+}
+
+/* Main content */
+
+.main-pane {
+  background: var(--paper);
+}
+
+.sl-markdown-content {
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4 {
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.sl-markdown-content h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.sl-markdown-content h2 {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.65rem;
+}
+
+.sl-markdown-content h3 {
+  font-size: 1.25rem;
+}
+
+/* Eyebrow-like metadata */
+
+.hero .tagline,
+.breadcrumbs,
+.pagination-links,
+.sidebar-content summary {
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Links */
+
+.sl-markdown-content a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.sl-markdown-content a:hover {
+  color: var(--ink);
+}
+
+/* Cards */
+
+.sl-link-card {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.sl-link-card:hover {
+  border-color: var(--orange);
+  background: transparent;
+}
+
+/* Code */
+
+.expressive-code {
+  border-radius: 0;
+}
+
+/* Buttons and controls */
+
+button,
+input {
+  font-family: "DM Mono", monospace;
+}
+
+button {
+  border-radius: 0;
+}
+
+/* Horizontal rules */
+
+.sl-markdown-content hr {
+  border-color: var(--line);
+}
+
+/* Tables */
+
+.sl-markdown-content table {
+  border-collapse: collapse;
+}
+
+.sl-markdown-content th,
+.sl-markdown-content td {
+  border-color: var(--line);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .sl-markdown-content h1 {
+    font-size: 2.8rem;
+  }
+}

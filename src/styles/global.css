@@ -46,7 +46,7 @@ button {
   font-size: 11px;
 }
 .display {
-  font-size: clamp(4.2rem, 12.2vw, 11.5rem);
+  font-size: clamp(4.2rem, 10vw, 8rem);
   line-height: 0.82;
   letter-spacing: -0.035em;
   font-weight: 700;
@@ -92,6 +92,7 @@ button {
 .button.light:hover {
   background: var(--ink);
   color: var(--paper);
+  border-color: #171714;
 }
 .rule {
   border: 0;

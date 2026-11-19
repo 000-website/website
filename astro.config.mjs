@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "000.website docs",
+      customCss: ["./src/styles/docs.css"],
       components: {
         SiteTitle: "./src/components/DocsSiteTitle.astro",
       },

@@ -9,10 +9,11 @@ import Footer from "../components/Footer.astro";
   <main>
     <section class="hero wrap">
       <h1 class="display">
-        LET'S PUT
-        <br />
-        YOU <span class="accent">ONLINE</span> <br />
-        <span style={{ fontSize: "5rem" }}>*For free</span>
+        LET'S PUT YOU
+        <!-- <br /> -->
+        <span> </span>
+        <span class="accent">ONLINE</span> <br />
+        <span>*For free</span>
       </h1>
 
       <div class="hero-bottom">
@@ -42,30 +43,27 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
     <section class="promise wrap">
-      <p class="section-title">Why 000?</p>
+      <h2 class="section-title">Why 000?</h2>
       <div class="promise-grid">
         <article>
-          <b>01</b>
           <h3>
-            0
+            <span style={{ fontSize: "10rem" }}>0</span>
             <br />
             TO START.
           </h3>
           <p>No initial development fee.</p>
         </article>
         <article>
-          <b>02</b>
           <h3>
-            0
+            <span style={{ fontSize: "10rem" }}>0</span>
             <br />
             MONTHLY.
           </h3>
           <p>No maintenance plans or subscriptions.</p>
         </article>
         <article>
-          <b>03</b>
           <h3>
-            0
+            <span style={{ fontSize: "10rem" }}>0</span>
             <br />
             LOCK-IN.
           </h3>
@@ -74,11 +72,14 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
     <section class="feature">
-      <p class="section-title">Our work</p>
       <div class="wrap feature-grid">
         <div>
-          <p class="feature-number">001</p>
+          <p class="feature-number">Our work</p>
+          <!-- <p class="feature-number">Our work</p>
+            -->
+          <!-- <p class="feature-number">001</p> -->
         </div>
+
         <div>
           <h2 class="section-title">
             SEOUL
@@ -101,7 +102,7 @@ import Footer from "../components/Footer.astro";
       <h2 class="display">
         Claim your corner of the
         <br />
-        <span class="accent">internet.</span>
+        <span class="accent">internet</span>
       </h2>
       <div class="closing-bottom">
         <p>
@@ -130,15 +131,16 @@ import Footer from "../components/Footer.astro";
     color: var(--muted);
   }
   .hero h1 {
-    margin-top: 100px;
-    /* margin-top:40px;  */
+    margin-top: 110px;
+    /* margin-top: 40px; */
     position: relative;
     z-index: 1;
   }
   .hero-bottom {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    /* justify-content: space-between; */
+    /* align-items: end; */
+    justify-self: end;
     gap: 30px;
     margin: 48px 0 50px;
   }
@@ -189,8 +191,8 @@ import Footer from "../components/Footer.astro";
     font-size: 17px;
     line-height: 1.55;
     margin: 40px 0 24px auto;
-    font-weight: 400;
-    color: whitesmoke;
+    font-weight: 500;
+    /* color: whitesmoke; */
   }
   .text-link {
     display: block;
@@ -233,10 +235,10 @@ import Footer from "../components/Footer.astro";
     color: var(--orange);
   }
   .promise-grid h3 {
-    font-size: clamp(2.3rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 3rem);
     line-height: 0.88;
     letter-spacing: -0.08em;
-    margin: 40px 0 20px;
+    /* margin: 40px 0 20px; */
   }
   .promise-grid p {
     max-width: 260px;
@@ -254,12 +256,14 @@ import Footer from "../components/Footer.astro";
     gap: 30px;
   }
   .feature-number {
-    font-size: clamp(6rem, 18vw, 15rem);
-    line-height: 0.8;
-    letter-spacing: -0.12em;
+    /* font-size: clamp(6rem, 18vw, 15rem); */
+    font-size: clamp(6rem, 14vw, 11rem);
+    line-height: 0.6;
+    letter-spacing: -0.1em;
     margin: 45px 0 0;
+    margin: 45px;
     font-weight: 700;
-    color: var(--orange);
+    /* color: var(--orange); */
   }
   .feature-grid .section-title {
     margin: 45px 0 25px;
